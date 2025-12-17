@@ -1,0 +1,17 @@
+ansiblemain ansible_host=192.168.1.112
+
+[ansible_target]
+ansiblemain 
+
+[ansible_target:vars]
+ansible_connect=ssh
+ansible_user=mennatullah 
+ansible_private_key=~/.ssh/id_rsa
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+---
+- name: Ansible practise
+  hosts: ansible_target
+  gather_facts: true
+  become:  true
+  become_method: ansible.builtin.sudo 
+ 
+  tasks:
+   - name: print some host info 
+     ansible.builtin.debug:
+       msg: "the host name is {{ansible_nodename}} and it is running {{ansible_distribution}} {{ansible_distribution_version}} "
+  
+
+   - name: update package to the leatest version 
+     ansible.builtin.apt:
+      name: "*"
+      state: latest
+      update-cache: yes      

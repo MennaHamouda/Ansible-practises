@@ -4,4 +4,12 @@
   hosts: all 
   gather_facts: yes
   roles:
-   - common 
+   - common
+
+- name: Install the web server 
+  become: yes
+  hosts: web-server
+  gather_facts: no 
+  roles:
+   - web-server
+     

@@ -1,0 +1,4 @@
+---
+# defaults file for roles/web-server
+
+deploy_custom_page: false

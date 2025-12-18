@@ -1,0 +1,18 @@
+[all:vars]
+ansible_connect=ssh
+ansible_user=mennatullah
+ansible_private_key=~/.ssh/id_rsa
+
+
+[web-server]
+web-server  ansible_host=192.168.1.112
+
+[db-server]
+db-server  ansible_host=192.168.1.113
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+---
+# defaults file for roles/common
+
+
+
+common_package:
+  - ntp
+  - git 
+  - vim 
+  - unzip 
+  - curl 

@@ -1,13 +1,11 @@
 ---
 # tasks file for roles/common
 
-
 - name: Update all package to the latest 
   ansible.builtin.apt: 
    name: "*"
    state: latest
    update_cache: yes 
-
 
 - name: Install common package 
   ansible.builtin.apt:
@@ -21,13 +19,11 @@
   delegate_to: localhost
   become: false
 
-
 - name: Add user group 
   ansible.builtin.group:
    name: "{{ item.group }}" 
    state: "{{ item.state }}"
   loop: "{{ users }}"   
-
 
 - name: Add user to group 
   ansible.builtin.user: 

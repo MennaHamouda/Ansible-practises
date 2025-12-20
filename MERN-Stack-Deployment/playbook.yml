@@ -12,4 +12,11 @@
   gather_facts: no 
   roles:
    - web-server
+
+- name: Install and configure the database
+  gather_facts: yes
+  become: true
+  hosts: db-servers
+  roles:
+    - db-server     
      

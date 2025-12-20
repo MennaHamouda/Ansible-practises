@@ -49,7 +49,7 @@
     dest: "{{ app_dir }}/{{ app_name }}/src/App.js"
     mode: '0644'
     variable_start_string: " {[% "
-    variable_end_string: " %]}"
+    variable_end_string: " %]} "
   vars:
     start_string: "Hello World"
   when: deploy_custom_page

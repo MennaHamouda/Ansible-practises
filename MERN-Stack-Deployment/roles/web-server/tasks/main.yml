@@ -1,4 +1,4 @@
-:---
+---
 # tasks file for roles/webserver
 
 - name: Install Node.js and NPM
@@ -41,13 +41,15 @@
     src: App.css
     dest: "{{ app_dir }}/{{ app_name }}/src/App.css"
     mode: '0644'
- when: deploy_custom_page 
+  when: deploy_custom_page 
 
 - name: Deploy custom App.js
   ansible.builtin.template:
     src: App.js.j2
     dest: "{{ app_dir }}/{{ app_name }}/src/App.js"
     mode: '0644'
+    variable_start_string: " {[% "
+    variable_end_string: " %]}"
   vars:
     start_string: "Hello World"
   when: deploy_custom_page
